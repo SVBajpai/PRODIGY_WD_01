@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#navbar ul li {
+    display: inline;
+}
+
+#navbar ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    background-color: #555;
+}
+
+.content {
+    padding-top: 50px; /* Adjust according to the height of the navbar */
+    height: 1500px; /* Just for demonstration, replace with your actual content */
+}
+
+.active {
+    background-color: #555 !important;
+}
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <!-- Your page content goes here -->
+        <div id="home">
+            <h2>Home</h2>
+            <p>Welcome to our website!</p>
+        </div>
+        <div id="about">
+            <h2>About</h2>
+            <p>Learn more about us.</p>
+        </div>
+        <div id="services">
+            <h2>Services</h2>
+            <p>Discover our services.</p>
+        </div>
+        <div id="contact">
+            <h2>Contact</h2>
+            <p>Get in touch with us.</p>
+        </div>
+    </div>
+
+    <script>window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.scrollY > 0) {
+        navbar.classList.add('active');
+    } else {
+        navbar.classList.remove('active');
+    }
+});</script>
+</body>
+</html>
